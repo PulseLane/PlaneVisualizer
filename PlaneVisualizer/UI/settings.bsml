@@ -1,0 +1,4 @@
+﻿<settings-container>
+  <checkbox text='Enabled' value='enabled'></checkbox>
+  <checkbox text='Practice Enable' value='practiceEnable' hover-hint='CURRENTLY DOES NOTHING - Automatically turn on when in practice mode'></checkbox>
+</settings-container>
