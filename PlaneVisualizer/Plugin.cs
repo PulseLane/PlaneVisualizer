@@ -13,10 +13,13 @@ namespace PlaneVisualizer
     [Plugin(RuntimeOptions.DynamicInit)]
     public class Plugin
     {
+
         public const string HarmonyId = "com.PulseLane.BeatSaber.PlaneVisualizer";
         internal static Plugin instance { get; private set; }
         internal static string Name => "PlaneVisualizer";
         internal static Harmony harmony => new Harmony(HarmonyId);
+
+        // TODO: Remove controller
         internal static PlaneVisualizerController PluginController { get { return PlaneVisualizerController.instance; } }
 
         [Init]
@@ -53,7 +56,7 @@ namespace PlaneVisualizer
 
         private void OnGameSceneLoaded()
         {
-            if (Config.enabled)
+            if (Config.enabled && !BS_Utils.Plugin.LevelData.Mode.Equals(BS_Utils.Gameplay.Mode.Multiplayer))
                 PluginController.OnGameSceneLoad();
         }
         private void OnMenuSceneLoadedFresh(ScenesTransitionSetupDataSO obj)

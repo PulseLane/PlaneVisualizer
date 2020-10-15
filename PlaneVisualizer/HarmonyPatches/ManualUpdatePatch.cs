@@ -12,7 +12,7 @@ namespace PlaneVisualizer.HarmonyPatches
         {
             if (!Config.enabled)
                 return;
-            var data = typeof(SaberMovementData).GetField("_data", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(____movementData) as SaberMovementData.Data[];
+            var data = typeof(SaberMovementData).GetField("_data", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(____movementData) as BladeMovementDataElement[];
             int nextAddIndex = (int) typeof(SaberMovementData).GetField("_nextAddIndex", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(____movementData);
 
             var num = data.Length;
